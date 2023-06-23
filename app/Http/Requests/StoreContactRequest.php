@@ -13,7 +13,7 @@ class StoreContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,17 +27,24 @@ class StoreContactRequest extends FormRequest
             'fullName'=> 'required|string|max:100',
             'email'=> 'required|string|max:50',
             'phone'=> 'required|string|max:50',
-            'message'=> 'required',
+            'message'=> 'required|string',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'user_id.required' => 'The user ID field is required.',
-            'user_id.integer' => 'The user ID must be an integer.',
-            'user_id.exists' => 'The selected user does not exist.',
-            'title.required' => 'The title field is required.',
+            'fullName.required' => 'The full name field is required.',
+            'fullName.string' => 'The full name must be a string.',
+            'fullName.max' => 'The full name may not be greater than :max characters.',
+            'email.required' => 'The email field is required.',
+            'email.string' => 'The email must be a string.',
+            'email.max' => 'The email may not be greater than :max characters.',
+            'phone.required' => 'The phone field is required.',
+            'phone.string' => 'The phone must be a numeric value.',
+            'phone.max' => 'The phone may not be greater than :max characters.',
+            'message.required' => 'The message field is required.',
+            'message.string' => 'The message must be a string.',
         ];
     }
 

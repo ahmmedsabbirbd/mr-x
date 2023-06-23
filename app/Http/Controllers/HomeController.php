@@ -15,20 +15,50 @@ class HomeController extends Controller
         $hero = DB::table('heroprperties')
         ->first();
 
-        return $hero;
+        if($hero) {
+            return response()->json([
+                'status'=>200,
+                'data' => $hero
+            ]);
+        } else {
+            return response()->json([
+                'status'=>404,
+                'data' => 'Data not found'
+            ]);
+        }
     }
     
     public function aboutData() {
         $about = DB::table('abouts')
         ->first();
 
-        return $about;
+        if($about) {
+            return response()->json([
+                'status'=>200,
+                'data' => $about
+            ]);
+        } else {
+            return response()->json([
+                'status'=>404,
+                'data' => 'Data not found'
+            ]);
+        }
     }
     
     public function socialsData() {
         $socials = DB::table('socials')
         ->first();
 
-        return $socials;
+        if($socials) {
+            return response()->json([
+                'status'=>200,
+                'data' => $socials
+            ]);
+        } else {
+            return response()->json([
+                'status'=>404,
+                'data' => 'Data not found'
+            ]);
+        }
     }
 }

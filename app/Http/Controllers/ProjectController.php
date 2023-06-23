@@ -15,6 +15,16 @@ class ProjectController extends Controller
         $projects = DB::table('projects')
         ->get();
         
-        return $projects;
+        if($projects) {
+            return response()->json([
+                'status'=>200,
+                'data' => $projects
+            ]);
+        } else {
+            return response()->json([
+                'status'=>404,
+                'data' => 'Data not found'
+            ]);
+        }
     }
 }
