@@ -29,10 +29,11 @@
 </header>
 <script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
-    heroData();
-    async function heroData() {
+    async function getHeroData() {
+        document.getElementById('loading-div').classList.remove('d-none');
         let URL = 'http://localhost:8000/heroData';
         let res = await axios.get(URL);
+        document.getElementById('loading-div').classList.add('d-none');
         if (res.status === 200) {
             let heroData = res.data['data'];
             document.getElementById('keyLine').innerText=heroData.keyLine;
@@ -43,4 +44,5 @@
             console.log('data not found');
         }
     }
+    getHeroData();
 </script>
