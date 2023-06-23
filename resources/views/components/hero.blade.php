@@ -5,25 +5,42 @@
                 <!-- Header text content-->
                 <div class="text-center text-xxl-start">
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                        <div class="text-uppercase">Design &middot; Development &middot; Marketing</div>
+                        <div class="text-uppercase" id="keyLine"></div>
                     </div>
-                    <div class="fs-3 fw-light text-muted">I can help your business to</div>
-                    <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Get online and grow
-                            fast</span></h1>
+                    <div class="fs-3 fw-light text-muted" id="shortTitle"></div>
+                    <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline" id="titleId"></span></h1>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{url('/resume')}}">Resume</a>
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                            href="{{ url('/resume') }}">Resume</a>
                         <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
-                            href="{{url('/projects')}}">Projects</a>
+                            href="{{ url('/projects') }}">Projects</a>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-7">
                 <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                     <div class="profile">
-                        <img class="profile-img" src="assets/profile.png" alt="..." />
+                        <img class="profile-img" id="profileImage" alt="..." />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
+<script src="{{ asset('assets/js/axios.js') }}"></script>
+<script>
+    heroData();
+    async function heroData() {
+        let URL = 'http://localhost:8000/heroData';
+        let res = await axios.get(URL);
+        if (res.status === 200) {
+            let heroData = res.data['data'];
+            document.getElementById('keyLine').innerText=heroData.keyLine;
+            document.getElementById('shortTitle').innerText=heroData.short_title;
+            document.getElementById('titleId').innerText=heroData.title;
+            document.getElementById('profileImage').src=heroData.img;
+        } else {
+            console.log('data not found');
+        }
+    }
+</script>

@@ -26,8 +26,11 @@ class HomeController extends Controller
                 'data' => 'Data not found'
             ]);
         }
+        // return DB::table('heroprperties')
+        //             ->first();
+
     }
-    
+
     public function aboutData() {
         $about = DB::table('abouts')
         ->first();
@@ -44,7 +47,7 @@ class HomeController extends Controller
             ]);
         }
     }
-    
+
     public function socialsData() {
         $socials = DB::table('socials')
         ->first();
