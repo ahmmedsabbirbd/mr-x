@@ -25,17 +25,18 @@
             res.data['data'].forEach(project => {
                 let {title, previewLink, thumbnailLink, details} = project
                 document.getElementById('project-list').innerHTML += (`
-                <a href="${previewLink}" class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                     <div class="card-body p-0">
                         <div class="d-flex align-items-center">
                             <div class="p-5">
                                 <h2 class="fw-bolder">${title}</h2>
                                 <p>${details}</p>
+                                <a href="${previewLink}" target="_blank">View Project</a>
                             </div>
-                            <img class="img-fluid" style="max-width:500px" src="${thumbnailLink}" alt="${title}" />
+                            <img class="img-fluid" src="${thumbnailLink}" alt="${title}" />
                         </div>
                     </div>
-                </a>
+                </div>
                 `)
 
             });
