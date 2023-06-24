@@ -16,7 +16,7 @@
 <script>
     getExperiencesData();
     async function getExperiencesData() {
-        let URL = 'http://localhost:8000/experiencesData';
+        let URL = '/experiencesData';
         try {
             document.getElementById('loading-div').classList.remove('d-none');
             document.getElementById('content-div').classList.add('d-none');

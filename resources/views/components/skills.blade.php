@@ -13,7 +13,7 @@
 <script>
     getSkillsData();
     async function getSkillsData() {
-        let URL = 'http://localhost:8000/skillsData';
+        let URL = '/skillsData';
         try {
             const response = await axios.get(URL);
             response.data.data.forEach((item) => {

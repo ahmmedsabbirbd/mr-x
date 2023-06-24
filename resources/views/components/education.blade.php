@@ -8,7 +8,7 @@
 <script>
     getEducationsData();
     async function getEducationsData() {
-        let URL = 'http://localhost:8000/educationsData';
+        let URL = '/educationsData';
         try {
             const response = await axios.get(URL);
             response.data.data.forEach((item) => {

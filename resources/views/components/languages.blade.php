@@ -12,7 +12,7 @@
 <script>
     getLanguagesData();
     async function getLanguagesData() {
-        let URL = 'http://localhost:8000/languagesData';
+        let URL = '/languagesData';
         try {
             const response = await axios.get(URL);
             document.getElementById('loading-div').classList.add('d-none');
