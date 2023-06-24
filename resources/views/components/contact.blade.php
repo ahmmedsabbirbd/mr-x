@@ -43,3 +43,64 @@
     </div>
     </div>
 </section>
+<script src="{{ asset('assets/js/axios.js') }}"></script>
+<script>
+    let contactForm = document.getElementById('contactForm')
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        let phone = document.getElementById('phone').value
+        let message = document.getElementById('message').value
+
+        const validateEmailFormat = (email)=> { 
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        if (name.length === 0) {
+            alert('The name filed is must')
+            if(name.length > 100) {
+                alert('The name filed is max value 100')
+            }
+        } else if(email.length === 0) {
+            alert('The email filed is must')
+            if(email.length > 50) {
+                alert('The email filed is max value 50')
+            } else if(validateEmailFormat(email)) {
+                alert('Provide Valid email')
+            }
+        } else if(phone.length === 0) {
+            alert('The phone filed is must')
+            if(phone.length > 50) {
+                alert('The phone filed is max value 50')
+            }
+        } else if(message.length === 0) {
+            alert('The phone filed is must')
+        } else {
+            let url = '/contactRequest';
+            let formData = {
+                "fullName": name,
+                "email": email,
+                "phone": phone,
+                "message": message
+            }
+
+            document.getElementById('loading-div').classList.remove('d-none')
+            document.getElementById('content-div').classList.add('d-none')
+            
+            let res = await axios.post(url, formData)
+            
+            document.getElementById('loading-div').classList.remove('d-none')
+            document.getElementById('content-div').classList.add('d-none')
+            if(res.status===201 && res.data.status === 201) {
+                alert('Submited')
+                contactForm.reset()
+            } else {
+                alert('Some think is worng')
+            }
+        }
+    })
+
+</script>
