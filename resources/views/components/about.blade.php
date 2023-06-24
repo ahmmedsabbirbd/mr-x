@@ -16,7 +16,6 @@
         </div>
     </div>
 </section>
-<script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     const getAboutData = async ()=> {
         let URL = 'http://localhost:8000/aboutData'

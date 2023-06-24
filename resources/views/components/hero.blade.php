@@ -27,7 +27,6 @@
         </div>
     </div>
 </header>
-<script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     async function getHeroData() {
         let URL = 'http://localhost:8000/heroData';
