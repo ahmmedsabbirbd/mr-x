@@ -54,7 +54,7 @@
         let phone = document.getElementById('phone').value
         let message = document.getElementById('message').value
 
-        const validateEmailFormat = (email)=> { 
+        function validateEmailFormat (email) { 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }

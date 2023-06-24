@@ -4,36 +4,45 @@
             <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
         </div>
         <div class="row gx-5 justify-content-center">
-            <div class="col-lg-11 col-xl-9 col-xxl-8">
-                <!-- Project Card 1-->
-                <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                    <div class="card-body p-0">
-                        <div class="d-flex align-items-center">
-                            <div class="p-5">
-                                <h2 class="fw-bolder">Project Name 1</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum
-                                    aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad
-                                    asperiores! Explicabo commodi quo itaque! Ipsam!</p>
-                            </div>
-                            <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 2-->
-                <div class="card overflow-hidden shadow rounded-4 border-0">
-                    <div class="card-body p-0">
-                        <div class="d-flex align-items-center">
-                            <div class="p-5">
-                                <h2 class="fw-bolder">Project Name 2</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum
-                                    aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad
-                                    asperiores! Explicabo commodi quo itaque! Ipsam!</p>
-                            </div>
-                            <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
-                        </div>
-                    </div>
-                </div>
+            <div id="project-list" class="col-lg-11 col-xl-9 col-xxl-8">
             </div>
         </div>
     </div>
 </section>
+<script src="{{ asset('assets/js/axios.js') }}"></script>
+<script>
+    async function getProjectsData () {
+        let url = '/projectsData'
+
+        document.getElementById('loading-div').classList.remove('d-none')
+        document.getElementById('content-div').classList.add('d-none')
+            
+        let res = await axios.get(url)
+        
+        document.getElementById('loading-div').classList.add('d-none')
+        document.getElementById('content-div').classList.remove('d-none')
+
+        if(res.status===200) {
+            res.data['data'].forEach(project => {
+                let {title, previewLink, thumbnailLink, details} = project
+                document.getElementById('project-list').innerHTML += (`
+                <a href="${previewLink}" class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                    <div class="card-body p-0">
+                        <div class="d-flex align-items-center">
+                            <div class="p-5">
+                                <h2 class="fw-bolder">${title}</h2>
+                                <p>${details}</p>
+                            </div>
+                            <img class="img-fluid" style="max-width:500px" src="${thumbnailLink}" alt="${title}" />
+                        </div>
+                    </div>
+                </a>
+                `)
+
+            });
+        } else {
+            console.log('data not found')
+        }
+    }
+    getProjectsData()
+</script>
