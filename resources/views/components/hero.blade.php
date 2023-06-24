@@ -29,11 +29,10 @@
 </header>
 <script>
     async function getHeroData() {
-        let URL = 'http://localhost:8000/heroData';
+        let url = '/heroData';
         document.getElementById('loading-div').classList.remove('d-none');
         document.getElementById('content-div').classList.add('d-none');
-        let res = await axios.get(URL);
-        document.getElementById('loading-div').classList.add('d-none');
+        let res = await axios.get(url);
         if (res.status === 200) {
             let heroData = res.data['data'];
             document.getElementById('keyLine').innerText=heroData.keyLine;

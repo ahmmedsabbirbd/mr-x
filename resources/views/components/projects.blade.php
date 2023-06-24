@@ -9,7 +9,6 @@
         </div>
     </div>
 </section>
-<script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     async function getProjectsData () {
         let url = '/projectsData'

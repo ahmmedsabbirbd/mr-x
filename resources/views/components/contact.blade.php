@@ -43,7 +43,6 @@
     </div>
     </div>
 </section>
-<script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     let contactForm = document.getElementById('contactForm')
 

@@ -17,9 +17,9 @@
     </div>
 </section>
 <script>
-    const GetAboutData = async ()=> {
-        let URL = 'http://localhost:8000/aboutData'
-        let res = await axios.get(URL)
+    async function GetAboutData () {
+        let url = '/aboutData'
+        let res = await axios.get(url)
         if(res.status===200) {
             let {title, details} = res.data['data'];
             document.getElementById('title').innerText=title;
@@ -30,9 +30,12 @@
     }
     GetAboutData()
 
-    const GetSocialsData = async ()=> {
-        let URL = 'http://localhost:8000/socialsData'
-        let res = await axios.get(URL)
+    async function GetSocialsData () {
+        let url = '/socialsData'
+        let res = await axios.get(url)
+
+        document.getElementById('loading-div').classList.add('d-none')
+        document.getElementById('content-div').classList.remove('d-none')
         if(res.status===200) {
             let {twitterLink, linkedinLink, githubLink} = res.data['data'];
             document.getElementById('twitter').href=twitterLink;
