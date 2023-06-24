@@ -12,6 +12,7 @@
         rel="stylesheet" />
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets/js/axios.js') }}"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
