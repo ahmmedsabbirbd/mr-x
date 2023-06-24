@@ -92,8 +92,8 @@
             
             let res = await axios.post(url, formData)
             
-            document.getElementById('loading-div').classList.remove('d-none')
-            document.getElementById('content-div').classList.add('d-none')
+            document.getElementById('loading-div').classList.add('d-none')
+            document.getElementById('content-div').classList.remove('d-none')
             if(res.status===201 && res.data.status === 201) {
                 alert('Submited')
                 contactForm.reset()
