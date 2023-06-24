@@ -26,12 +26,13 @@
             </div>
         </div>
     </div>
-</header> 
+</header>
 <script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     async function getHeroData() {
-        document.getElementById('loading-div').classList.remove('d-none');
         let URL = 'http://localhost:8000/heroData';
+        document.getElementById('loading-div').classList.remove('d-none');
+        document.getElementById('content-div').classList.add('d-none');
         let res = await axios.get(URL);
         document.getElementById('loading-div').classList.add('d-none');
         if (res.status === 200) {
