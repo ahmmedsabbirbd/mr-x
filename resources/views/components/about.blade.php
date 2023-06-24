@@ -18,22 +18,22 @@
 </section>
 <script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
-    const GetAboutData = async ()=> {
+    const getAboutData = async ()=> {
         let URL = 'http://localhost:8000/aboutData'
         let res = await axios.get(URL)
         if(res.status===200) {
             let {title, details} = res.data['data'];
-            document.getElementById('title').innerText=title;
-            document.getElementById('details').innerText=details;
         } else {
             console.log('data not found')
         }
     }
-    GetAboutData()
+    getAboutData()
 
-    const GetSocialsData = async ()=> {
+    const getSocialsData = async ()=> {
         let URL = 'http://localhost:8000/socialsData'
         let res = await axios.get(URL)
+        document.getElementById('loading-div').classList.add('d-none');
+        document.getElementById('content-div').classList.remove('d-none');
         if(res.status===200) {
             let {twitterLink, linkedinLink, githubLink} = res.data['data'];
             document.getElementById('twitter').href=twitterLink;
@@ -43,5 +43,5 @@
             console.log('data not found')
         }
     }
-    GetSocialsData()
+    getSocialsData()
 </script>

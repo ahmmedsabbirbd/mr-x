@@ -19,7 +19,9 @@
         <!-- navbar-->
         @include('components.navbar')
         @include('components.loader')
-        @yield('content')
+        <div class="" id="content-div">
+            @yield('content')
+        </div>
     </main>
     <!-- Footer-->
     @include('components.footer')
