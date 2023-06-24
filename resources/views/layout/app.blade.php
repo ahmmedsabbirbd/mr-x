@@ -17,6 +17,9 @@
 
             <!-- navbar-->
             @include('components.navbar')
+            
+            <!-- loader-->
+            @include('components.loader')
 
             @yield('content')
 
