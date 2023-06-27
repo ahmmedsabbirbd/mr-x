@@ -15,9 +15,9 @@
 
         document.getElementById('loading-div').classList.remove('d-none')
         document.getElementById('content-div').classList.add('d-none')
-            
+
         let res = await axios.get(url)
-        
+
         document.getElementById('loading-div').classList.add('d-none')
         document.getElementById('content-div').classList.remove('d-none')
 
@@ -31,7 +31,8 @@
                             <div class="p-5">
                                 <h2 class="fw-bolder">${title}</h2>
                                 <p>${details}</p>
-                                <a href="${previewLink}" target="_blank">View Project</a>
+                                <a class="btn btn-primary btn-lg px-3 py-2 me-sm-3 fs-6 fw-bolder"
+                            href="${previewLink}" target="_blank">View Project</a>
                             </div>
                             <img class="img-fluid" src="${thumbnailLink}" alt="${title}" />
                         </div>
