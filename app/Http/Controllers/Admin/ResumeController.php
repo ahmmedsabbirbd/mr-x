@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class ResumeController extends Controller
+{
+    public function resumePage(){
+        return view('pages.admin.resume.index');
+    }
+}

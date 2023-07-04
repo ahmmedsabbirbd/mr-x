@@ -33,3 +33,11 @@ Route::get('/skillsData', [ResumeController::class, 'skillsData']);
 Route::get('/languagesData', [ResumeController::class, 'languagesData']);
 Route::get('/projectsData', [ProjectController::class, 'projectsData']);
 Route::post('/contactRequest', [ContactController::class, 'contactRequest']);
+
+Auth::routes();
+
+// Admin Route
+Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
+Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
+Route::get('/admin/resumepage', [\App\Http\Controllers\Admin\ResumeController::class, 'resumePage'])->name('admin.resumeepage');
+
