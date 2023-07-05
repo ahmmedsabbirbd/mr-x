@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('admin/dist/css/style.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         @include('components.admin.navbar')
         @include('components.admin.sidebar')
@@ -22,6 +22,7 @@
             @yield('content')
         </div>
     </div>
+    @include('components.admin.footer')
 
     <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
