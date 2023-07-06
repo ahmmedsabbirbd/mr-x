@@ -43,18 +43,18 @@
             }
         })
         // Toaster function
-        function message(icon, title){
+        function message(icon, title) {
             Toast.fire({
                 icon: icon,
                 title: title
             })
         }
         // Loader
-        function loading(load=true){
-            if(load==true){
+        function loading(load = true) {
+            if (load == true) {
                 document.getElementById('loading-div').classList.remove('d-none');
                 document.getElementById('content-div').classList.add('d-none');
-            }else{
+            } else {
                 document.getElementById('loading-div').classList.add('d-none');
                 document.getElementById('content-div').classList.remove('d-none');
             }

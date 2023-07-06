@@ -41,6 +41,10 @@ Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index']
 Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
 Route::post('/admin/homepage/hero-update', [\App\Http\Controllers\Admin\HomeController::class, 'heroDataUpdate'])->name('admin.hero.update');
 Route::get('/admin/resumepage', [\App\Http\Controllers\Admin\ResumeController::class, 'resumePage'])->name('admin.resumeepage');
+Route::post('/admin/resumepage/experience', [\App\Http\Controllers\Admin\ResumeController::class, 'storeExperience']);
+Route::delete('/admin/resumepage/experienceDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteExperience']);
+Route::get('/admin/resumepage/showExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showExperience']);
+Route::put('/admin/resumepage/updateExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'experienceUpdate']);
 Route::get('/admin/projectpage', [\App\Http\Controllers\Admin\ProjectController::class, 'projectpage'])->name('admin.projectpage');
 Route::get('/admin/contactpage', [\App\Http\Controllers\Admin\ContactController::class, 'contactpage'])->name('admin.contactpage');
 Route::get('/admin/socailmediapage', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailmediapage'])->name('admin.socailmediapage');
