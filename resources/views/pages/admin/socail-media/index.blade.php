@@ -6,12 +6,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Contact Page</h1>
+                        <h1 class="m-0">Socail Media Page</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Contact Page</li>
+                            <li class="breadcrumb-item active">Socail Media Page</li>
                         </ol>
                     </div>
                 </div>
@@ -24,13 +24,13 @@
                 <div class="card">
                   <div class="card-header p-2">
                     <ul class="nav nav-pills">
-                      <li class="nav-item"><a class="nav-link active" href="#Contact" data-toggle="tab">Contact</a></li>
+                      <li class="nav-item"><a class="nav-link active" href="#socail-media" data-toggle="tab">Socail Media</a></li>
                     </ul>
                   </div><!-- /.card-header -->
                   <div class="card-body">
                     <div class="tab-content">
-                      <div class="active tab-pane" id="Contact">
-                        @include('pages.admin.contact.contact-list')
+                      <div class="active tab-pane" id="socail-media">
+                        @include('pages.admin.socail-media.edit-socail')
                       </div>
                     </div>
                     <!-- /.tab-content -->

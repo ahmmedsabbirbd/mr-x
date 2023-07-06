@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    //
+    public function contactpage() {
+        return view('pages.admin.contact.index');
+    }
 }

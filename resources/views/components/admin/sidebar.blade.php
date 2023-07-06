@@ -45,19 +45,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.projectpage') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Projects</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.contactpage') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Contact</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.socailmediapage') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Social Media</p>
                             </a>
