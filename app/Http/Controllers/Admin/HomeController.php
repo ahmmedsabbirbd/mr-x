@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\HeroRquest;
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -12,5 +14,16 @@ class HomeController extends Controller
     }
     public function homePage(){
         return view('pages.admin.home.index');
+    }
+
+    public function heroDataUpdate(HeroRquest $request){
+        $hero = DB::table('heroprperties')->first();
+        return DB::table('heroprperties')->where('id','=',$hero->id)->update([
+            'keyLine'=>$request->keyLine,
+            'title'=>$request->title,
+            'short_title'=>$request->short_title,
+            'img'=>$request->img,
+        ]);
+
     }
 }
