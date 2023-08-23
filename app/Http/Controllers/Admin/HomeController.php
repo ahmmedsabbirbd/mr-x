@@ -24,6 +24,12 @@ class HomeController extends Controller
             'short_title'=>$request->short_title,
             'img'=>$request->img,
         ]);
-
+    }
+    public function aboutDataUpdate(Request $request){
+        $hero = DB::table('abouts')->first();
+        return DB::table('abouts')->where('id','=',$hero->id)->update([
+            'title'=>$request->title,
+            'details'=>$request->details
+        ]);
     }
 }

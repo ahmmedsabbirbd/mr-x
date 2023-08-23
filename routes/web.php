@@ -40,6 +40,7 @@ Auth::routes();
 Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
 Route::post('/admin/homepage/hero-update', [\App\Http\Controllers\Admin\HomeController::class, 'heroDataUpdate'])->name('admin.hero.update');
+Route::post('/admin/homepage/about-update', [\App\Http\Controllers\Admin\HomeController::class, 'aboutDataUpdate'])->name('admin.about.update');
 Route::get('/admin/resumepage', [\App\Http\Controllers\Admin\ResumeController::class, 'resumePage'])->name('admin.resumeepage');
 Route::post('/admin/resumepage/experience', [\App\Http\Controllers\Admin\ResumeController::class, 'storeExperience']);
 Route::delete('/admin/resumepage/experienceDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteExperience']);
