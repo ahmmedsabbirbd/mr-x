@@ -55,11 +55,18 @@ Auth::routes();
     Route::delete('/admin/resumepage/languageDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'languageDelete']);
     Route::post('/admin/resumepage/language', [\App\Http\Controllers\Admin\ResumeController::class, 'storeLanguage']);
     Route::put('/admin/resumepage/updateLanguage/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'updateLanguage']);
+
     Route::post('/admin/resumepage/experience', [\App\Http\Controllers\Admin\ResumeController::class, 'storeExperience']);
     Route::delete('/admin/resumepage/experienceDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteExperience']);
     Route::get('/admin/resumepage/showExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showExperience']);
     Route::put('/admin/resumepage/updateExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'experienceUpdate']);
+
     Route::get('/admin/projectpage', [\App\Http\Controllers\Admin\ProjectController::class, 'projectpage'])->name('admin.projectpage');
+    Route::post('/admin/projectpage/project', [\App\Http\Controllers\Admin\ProjectController::class, 'storeProject']);
+    Route::delete('/admin/projectpage/projectDelete/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'deleteProject']);
+    Route::get('/admin/projectpage/showProject/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'showProject']);
+    Route::put('/admin/projectpage/updateProject/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'projectUpdate']);
+
     Route::get('/admin/contactpage', [\App\Http\Controllers\Admin\ContactController::class, 'contactpage'])->name('admin.contactpage');
     Route::get('/admin/contactpage/contactMessageList', [\App\Http\Controllers\Admin\ContactController::class, 'ContactMessageList'])->name('admin.ContactMessageList');
     Route::get('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'getContactMessage'])->name('admin.getContactMessage');
