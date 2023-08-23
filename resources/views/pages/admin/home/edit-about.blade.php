@@ -44,6 +44,7 @@
             loading(false);
             if (res.status === 200) {
                 message('success', 'About Updated Successfully');
+                getAboutData();
             }
 
         } catch (error) {
