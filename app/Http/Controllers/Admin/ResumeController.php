@@ -97,7 +97,6 @@ class ResumeController extends Controller
         return DB::table('experiences')->where('id','=', $id)->first();
     }
     public function experienceUpdate(ExperienceRquest $request,$id){
-        $experience = DB::table('experiences')->first();
         return DB::table('experiences')->where('id','=',$id)->update([
             'duration'=>$request->duration,
             'title'=>$request->title,
