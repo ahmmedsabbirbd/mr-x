@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "cfa91e79-3c9a-4466-98fa-244c617d3b65",
+		"name": "Mr-X API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "heroData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/heroData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"heroData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aboutData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/aboutData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"aboutData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "socialsData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/socialsData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"socialsData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencesData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/experiencesData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"experiencesData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educationsData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/educationsData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"educationsData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "projectsData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/projectsData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"projectsData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "skillsData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/skillsData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"skillsData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "languagesData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/languagesData",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"languagesData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contactRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\":\"Al-Amin Sarker\",\n    \"email\":\"alamin.php100@gmail.com\",\n    \"phone\":\"01737-933939\",\n    \"message\":\"Hi, This is good project with mr. sabbir\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/contactRequest",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"contactRequest"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

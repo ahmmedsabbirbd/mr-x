@@ -1,0 +1,24 @@
+#loading-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f4f6f9;
+}
+
+#loading-spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border: 3px solid #dddada;
+    border-radius: 50%;
+    border-top-color:#333;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

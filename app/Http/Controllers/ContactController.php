@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\DB;
 class ContactController extends Controller
 {
     public function page() {
-        return view('pages.contact');
+        $seo=DB::table('seoproperties')->where('pageName', '=', 'contact')->first();
+        return view('pages.contact',['seo'=>$seo]);
     }
 
     public function contactRequest(StoreContactRequest $request) {
@@ -17,10 +18,10 @@ class ContactController extends Controller
         ->insert([
             'fullName'=> $request->fullName,
             'email'=> $request->email,
-            'phone'=> $request->email,
+            'phone'=> $request->phone,
             'message'=> $request->message,
-        ]); 
-        
+        ]);
+
         if($form) {
             return response()->json([
                 'status'=>201,

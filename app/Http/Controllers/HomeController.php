@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function page() {
-        return view('pages.home');
+        $seo=DB::table('seoproperties')->where('pageName', '=', 'home')->first();
+        return view('pages.home',['seo'=>$seo]);
     }
 
     public function heroData() {
@@ -26,8 +27,11 @@ class HomeController extends Controller
                 'data' => 'Data not found'
             ]);
         }
+        // return DB::table('heroprperties')
+        //             ->first();
+
     }
-    
+
     public function aboutData() {
         $about = DB::table('abouts')
         ->first();
@@ -44,7 +48,7 @@ class HomeController extends Controller
             ]);
         }
     }
-    
+
     public function socialsData() {
         $socials = DB::table('socials')
         ->first();
