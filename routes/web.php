@@ -38,12 +38,17 @@ Auth::routes();
 
 // Admin Route
 Route::group(['middleware' => ['auth']], function () {
+    // Page Route
     Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
-    Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
-    Route::post('/admin/homepage/hero-update', [\App\Http\Controllers\Admin\HomeController::class, 'heroDataUpdate'])->name('admin.hero.update');
-    Route::post('/admin/homepage/about-update', [\App\Http\Controllers\Admin\HomeController::class, 'aboutDataUpdate'])->name('admin.about.update');
-
     Route::get('/admin/resumepage', [\App\Http\Controllers\Admin\ResumeController::class, 'resumePage'])->name('admin.resumeepage');
+    Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
+    Route::get('/admin/projectpage', [\App\Http\Controllers\Admin\ProjectController::class, 'projectpage'])->name('admin.projectpage');
+    Route::get('/admin/contactpage', [\App\Http\Controllers\Admin\ContactController::class, 'contactpage'])->name('admin.contactpage');
+    Route::get('/admin/socailmediapage', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailmediapage']);
+
+    // Ajax Route
+    Route::post('/admin/homepage/hero-update', [\App\Http\Controllers\Admin\HomeController::class, 'heroDataUpdate']);
+    Route::post('/admin/homepage/about-update', [\App\Http\Controllers\Admin\HomeController::class, 'aboutDataUpdate']);
 
     Route::get('/admin/resumepage/showEducation/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showEducation']);
     Route::delete('/admin/resumepage/educationDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteEducation']);
@@ -65,16 +70,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/resumepage/showExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showExperience']);
     Route::put('/admin/resumepage/updateExperience/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'experienceUpdate']);
 
-    Route::get('/admin/projectpage', [\App\Http\Controllers\Admin\ProjectController::class, 'projectpage'])->name('admin.projectpage');
     Route::post('/admin/projectpage/project', [\App\Http\Controllers\Admin\ProjectController::class, 'storeProject']);
     Route::delete('/admin/projectpage/projectDelete/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'deleteProject']);
     Route::get('/admin/projectpage/showProject/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'showProject']);
     Route::put('/admin/projectpage/updateProject/{id}', [\App\Http\Controllers\Admin\ProjectController::class, 'projectUpdate']);
 
-    Route::get('/admin/contactpage', [\App\Http\Controllers\Admin\ContactController::class, 'contactpage'])->name('admin.contactpage');
-    Route::get('/admin/contactpage/contactMessageList', [\App\Http\Controllers\Admin\ContactController::class, 'ContactMessageList'])->name('admin.ContactMessageList');
-    Route::get('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'getContactMessage'])->name('admin.getContactMessage');
-    Route::delete('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'deleteContactMessage'])->name('admin.deleteContactMessage');
-    Route::get('/admin/socailmediapage', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailmediapage'])->name('admin.socailmediapage');
-    Route::put('/admin/socailmediapage/socail-update', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailUpdate'])->name('admin.socailUpdate');
+    Route::get('/admin/contactpage/contactMessageList', [\App\Http\Controllers\Admin\ContactController::class, 'ContactMessageList']);
+    Route::get('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'getContactMessage']);
+    Route::delete('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'deleteContactMessage']);
+    Route::put('/admin/socailmediapage/socail-update', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailUpdate']);
 });
