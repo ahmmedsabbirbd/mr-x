@@ -114,30 +114,21 @@ Note: If you encounter any issues while installing or running the project locall
 
 ## Dashboard Pages
 #### 4 pages
-5. ### Brands
-6. z
-   ![Brands](/public/assets/documentation/brands.png)
-6. ### Careers
+5. ### Admin Dashboard
+   ![Admin Dashboard](/public/assets/documentation/admin-dashboard.png)
+6. ### Admin Home Page
 
-   ![Careers](/public/assets/documentation/careers.png)
-7. ### Contact Us
+   ![Admin Home Page](/public/assets/documentation/admin-home.png)
+7. ### Admin Project Page
 
-   ![Contact Us](/public/assets/documentation/contact-us.png)
-8. ### Creators
+   ![Admin Project Page](/public/assets/documentation/admin-project.png)
+8. ### Admin Contact Page
 
-   ![Creators](/public/assets/documentation/creators.png)
+   ![Admin Contact Page](/public/assets/documentation/admin-contact.png)
 
-10. ### Customer Story
+10. ### Admin Social Media Page
 
-    ![Customer Story](/public/assets/documentation/customer-story.png)
-
-11. ### Pricing Features
-
-    ![Pricing Features](/public/assets/documentation/pricing-features.png)
-
-12. ### Try MR-X
-
-    ![Try MR-X](/public/assets/documentation/try-mr-x.png)
+    ![Admin Social Media Page](/public/assets/documentation/admin-socailmedia.png)
 
 ## Usage
 	Working
