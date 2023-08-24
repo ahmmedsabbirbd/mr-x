@@ -37,20 +37,24 @@ Route::post('/contactRequest', [ContactController::class, 'contactRequest']);
 Auth::routes();
 
 // Admin Route
-//Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
     Route::get('/admin/homepage', [\App\Http\Controllers\Admin\HomeController::class, 'homePage'])->name('admin.homepage');
     Route::post('/admin/homepage/hero-update', [\App\Http\Controllers\Admin\HomeController::class, 'heroDataUpdate'])->name('admin.hero.update');
     Route::post('/admin/homepage/about-update', [\App\Http\Controllers\Admin\HomeController::class, 'aboutDataUpdate'])->name('admin.about.update');
+
     Route::get('/admin/resumepage', [\App\Http\Controllers\Admin\ResumeController::class, 'resumePage'])->name('admin.resumeepage');
+
     Route::get('/admin/resumepage/showEducation/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showEducation']);
     Route::delete('/admin/resumepage/educationDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteEducation']);
     Route::post('/admin/resumepage/education', [\App\Http\Controllers\Admin\ResumeController::class, 'storeEducation']);
     Route::put('/admin/resumepage/updateEducation/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'updateEducation']);
+
     Route::get('/admin/resumepage/showSkill/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showSkill']);
     Route::delete('/admin/resumepage/skillDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'deleteSkill']);
     Route::post('/admin/resumepage/skill', [\App\Http\Controllers\Admin\ResumeController::class, 'storeSkill']);
     Route::put('/admin/resumepage/updateSkill/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'updateSkill']);
+
     Route::get('/admin/resumepage/showLanguage/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'showLanguage']);
     Route::delete('/admin/resumepage/languageDelete/{id}', [\App\Http\Controllers\Admin\ResumeController::class, 'languageDelete']);
     Route::post('/admin/resumepage/language', [\App\Http\Controllers\Admin\ResumeController::class, 'storeLanguage']);
@@ -73,4 +77,4 @@ Auth::routes();
     Route::delete('/admin/contactpage/getContactMessage/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'deleteContactMessage'])->name('admin.deleteContactMessage');
     Route::get('/admin/socailmediapage', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailmediapage'])->name('admin.socailmediapage');
     Route::put('/admin/socailmediapage/socail-update', [\App\Http\Controllers\Admin\SocailMediaController::class, 'socailUpdate'])->name('admin.socailUpdate');
-//});
+});
