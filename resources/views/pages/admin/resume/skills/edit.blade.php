@@ -11,7 +11,7 @@
                 <input type="hidden" id="id" class="form-control">
                 <div class="form-group">
                     <label for="">Skill</label>
-                    <input type="text" id="name" class="form-control">
+                    <input type="text" id="skill_update_name" class="form-control">
                 </div>
             </div>
             <div class="modal-footer justify-content-end">
@@ -31,7 +31,7 @@
                 console.log(res);
                 let item = res.data;
                 document.getElementById('id').value = item['id'];
-                document.getElementById('name').value = item['name'];
+                document.getElementById('skill_update_name').value = item['name'];
             }
         } catch (error) {
 
@@ -40,7 +40,7 @@
     // update experience
     async function updateSkill() {
         let id = document.getElementById('id').value;
-        let name = document.getElementById('name').value;
+        let name = document.getElementById('skill_update_name').value;
 
         const formData = {
             id: id,

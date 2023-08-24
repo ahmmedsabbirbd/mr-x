@@ -55,7 +55,7 @@
                     <td>${item['name']}</td>
                     <td>
                         <span onclick="SkillfillExistingData('${item['id']}')" class="btn btn-success btn-sm" data-toggle="modal" data-target="#SkillUpdateModal"><i class="fa fa-edit"></i></span>
-                        <span onclick="deleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
+                        <span onclick="SkillDeleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
                     </td>
                 </tr>`)
                 });
@@ -65,7 +65,7 @@
         }
     }
     //delete data
-    async function deleteItem(id) {
+    async function SkillDeleteItem(id) {
         let URL = `/admin/resumepage/skillDelete/` + id;
         try {
             loading();

@@ -50,7 +50,7 @@
                     <td>${shortContent}</td>
                     <td>
                         <span onclick="fillExistingData('${item['id']}')" class="btn btn-success btn-sm" data-toggle="modal" data-target="#updateModal"><i class="fa fa-edit"></i></span>
-                        <span onclick="deleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
+                        <span onclick="ExperienceDeleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
                     </td>
                 </tr>`)
                 });
@@ -60,7 +60,7 @@
         }
     }
     //delete data
-    async function deleteItem(id) {
+    async function ExperienceDeleteItem(id) {
         let URL = `/admin/resumepage/experienceDelete/` + id;
         try {
             loading();

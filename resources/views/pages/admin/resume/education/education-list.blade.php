@@ -57,7 +57,7 @@
                     <td>${shortContent}</td>
                     <td>
                         <span onclick="EducationfillExistingData('${item['id']}')" class="btn btn-success btn-sm" data-toggle="modal" data-target="#EducationUpdateModal"><i class="fa fa-edit"></i></span>
-                        <span onclick="deleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
+                        <span onclick="EducationDeleteItem('${item['id']}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></span>
                     </td>
                 </tr>`)
                 });
@@ -67,7 +67,7 @@
         }
     }
     //delete data
-    async function deleteItem(id) {
+    async function EducationDeleteItem(id) {
         let URL = `/admin/resumepage/educationDelete/` + id;
         try {
             loading();
