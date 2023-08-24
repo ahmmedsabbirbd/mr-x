@@ -8,7 +8,7 @@
         <textarea id="about-details" type="text" class="form-control"></textarea>
     </div>
     <div class="form-group">
-        <button onclick="heroUpdate()" type="submit"  class="btn btn-success float-right">Update</button>
+        <button onclick="aboutUpdate()" type="submit"  class="btn btn-success float-right">Update</button>
     </div>
 </div>
 <script>
@@ -31,7 +31,7 @@
     };
 
     // about data update
-    async function heroUpdate() {
+    async function aboutUpdate() {
         let title = document.getElementById('about-title').value;
         let details = document.getElementById('about-details').value;
         let URL = '/admin/homepage/about-update';
