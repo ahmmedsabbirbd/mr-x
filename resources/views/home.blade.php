@@ -37,19 +37,15 @@
         </div>
       </section>
 @endsection
+<script src="{{ asset('assets/js/axios.js') }}"></script>
 <script>
     getTotalContactMessageData();
     async function getTotalContactMessageData() {
-        let url = 'admin/contactpage/totalContactMessage';
+        let url = 'contactpage/totalContactMessage';
         try {
-            // document.getElementById('loading-div').classList.remove('d-none');
-            // document.getElementById('content-div').classList.add('d-none');
             let res = await axios.get(url);
-            // document.getElementById('loading-div').classList.add('d-none');
-            // document.getElementById('content-div').classList.remove('d-none');
-            console.log(res.data)
             let TotalContactMessage = res.data["data"];
-            // document.getElementById('TotalContactMessage').value = TotalContactMessage;
+            document.getElementById('TotalContactMessage').innerText = TotalContactMessage;
 
         } catch (error) {
             alert(error)
