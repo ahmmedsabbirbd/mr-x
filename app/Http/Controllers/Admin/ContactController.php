@@ -12,6 +12,22 @@ class ContactController extends Controller
         return view('pages.admin.contact.index');
     }
 
+    public function TotalContactMessage() {
+        $count  = DB::table('contacts')->count();
+
+        if($count) {
+            return response()->json([
+                'status'=>200,
+                'data' => $count
+            ]);
+        } else {
+            return response()->json([
+                'status'=>404,
+                'data' => 'Data not found'
+            ]);
+        }
+    }
+
     public function ContactMessageList() {
         $contacts = DB::table('contacts')->get();
 

@@ -115,7 +115,7 @@ Note: If you encounter any issues while installing or running the project locall
 ## Dashboard Pages
 #### 4 pages
 5. ### Brands
-6. 
+6. z
    ![Brands](/public/assets/documentation/brands.png)
 6. ### Careers
 
